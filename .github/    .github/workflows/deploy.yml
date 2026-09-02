@@ -25,7 +25,7 @@ jobs:
       - name: Prepare website
         run: |
           mkdir -p _site
-          unzip -q traceguide-ai-github-ready.zip -d extracted
+          unzip -q DaREAL-main.zip -d extracted
           INDEX=$(find extracted -name index.html -type f | head -n 1)
           if [ -z "$INDEX" ]; then
             echo "index.html not found"
