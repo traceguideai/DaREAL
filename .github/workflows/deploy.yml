@@ -14,32 +14,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Prepare website
-        run: |
-          mkdir -p _site
-          unzip -q DaREAL-main.zip -d extracted
-          SITE_DIR=$(find extracted -type f -name "index.html" -print -quit | xargs dirname)
-          if [ -z "$SITE_DIR" ] || [ "$SITE_DIR" = "." ]; then
-            echo "index.html not found"
-            exit 1
-          fi
-          cp -R "$SITE_DIR"/. _site/
+        uses: actions/checkout@v4
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload website
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site"
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
