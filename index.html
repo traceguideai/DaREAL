@@ -1,185 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRACEGUIDE AI | Digital Safety & Human Support</title>
-<meta name="description" content="TRACEGUIDE AI helps people document concerning online experiences, strengthen digital safety, organize information, and find appropriate human support.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TraceGuide AI | Digital Safety & Human Support</title>
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#07111f;color:#eef7ff;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:92%;max-width:1100px;margin:auto}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-header{padding:22px 0;border-bottom:1px solid #18314d}
-.logo{font-size:25px;font-weight:800;letter-spacing:1px;color:#38d9ff}
-.logo span{color:#b77cff}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(168, 85, 247, 0.13), transparent 32%),
+        #050914;
+      color: #eef7ff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-.hero{padding:75px 0 55px;text-align:center}
-.badge{display:inline-block;border:1px solid #255476;border-radius:30px;padding:8px 16px;color:#8eeaff;margin-bottom:25px;font-size:14px}
-h1{font-size:clamp(40px,8vw,72px);line-height:1.05;margin-bottom:22px}
-h1 span{color:#38d9ff}
-.hero p{max-width:720px;margin:0 auto 32px;color:#b9c9d8;font-size:18px}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.btn{padding:15px 23px;border-radius:10px;font-weight:bold;border:1px solid #277da4}
-.primary{background:#20cfff;color:#03101a}
-.secondary{background:#101f31;color:#fff}
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
 
-.section{padding:55px 0}
-.section h2{text-align:center;font-size:34px;margin-bottom:12px}
-.section-intro{text-align:center;color:#aebdcb;max-width:680px;margin:0 auto 35px}
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+      background: rgba(5, 9, 20, 0.82);
+    }
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#0c1b2c;border:1px solid #193650;border-radius:16px;padding:27px;transition:.2s}
-.card:hover{border-color:#35cfff;transform:translateY(-3px)}
-.icon{font-size:30px;margin-bottom:15px}
-.card h3{margin-bottom:8px;color:#fff}
-.card p{color:#aebdcb;font-size:15px}
-.card a{display:inline-block;margin-top:17px;color:#48dcff;font-weight:bold}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;text-align:center}
-.step{padding:22px}
-.number{font-size:30px;color:#b77cff;font-weight:bold}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.15rem;
+    }
 
-.promise{background:#0b1929;border-top:1px solid #193650;border-bottom:1px solid #193650}
-.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.promise-item{padding:20px}
-.promise-item strong{display:block;color:#42dcff;margin-bottom:7px}
+    .shield {
+      width: 42px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #00e5ff;
+      clip-path: polygon(50% 0%, 92% 15%, 88% 65%, 50% 100%, 12% 65%, 8% 15%);
+      color: #00e5ff;
+      text-shadow: 0 0 14px #00e5ff;
+      box-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
+    }
 
-footer{padding:35px 0;text-align:center;color:#879aaa;font-size:14px}
-footer strong{color:#38d9ff}
+    .brand span {
+      color: #00e5ff;
+    }
 
-@media(max-width:600px){
-.hero{padding-top:55px}
-.buttons{flex-direction:column}
-.btn{width:100%}
-}
-</style>
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #a9bdd0;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 0 70px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(0, 229, 255, 0.45);
+      border-radius: 999px;
+      color: #7eefff;
+      background: rgba(0, 229, 255, 0.06);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(2.5rem, 7vw, 5.2rem);
+      line-height: 1.03;
+      letter-spacing: -2px;
+    }
+
+    h1 .glow {
+      color: #00e5ff;
+      text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.8),
+        0 0 28px rgba(0, 229, 255, 0.35);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 26px auto;
+      color: #a9bdd0;
+      font-size: 1.08rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid rgba(0, 229, 255, 0.5);
+    }
+
+    .btn-primary {
+      background: #00e5ff;
+      color: #031019;
+      box-shadow: 0 0 24px rgba(0, 229, 255, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: #eef7ff;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(0, 229, 255, 0.4);
+    }
+
+    .section {
+      padding: 65px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #8fa6ba;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 25px;
+      min-height: 220px;
+      border: 1px solid rgba(0, 229, 255, 0.16);
+      border-radius: 16px;
+      background: linear-gradient(
+        145deg,
+        rgba(0, 229, 255, 0.07),
+        rgba(168, 85, 247, 0.04)
+      );
+      box-shadow: inset 0 0 25px rgba(255,255,255,0.015);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 229, 255, 0.5);
+      box-shadow: 0 0 28px rgba(0, 229, 255, 0.12);
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 9px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: #91a8bb;
+      font-size: 0.92rem;
+    }
+
+    .path {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .path div {
+      text-align: center;
+      padding: 18px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      background: rgba(168, 85, 247, 0.045);
+      color: #cbd9e5;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .mission {
+      margin-top: 30px;
+      padding: 35px;
+      border-radius: 18px;
+      text-align: center;
+      background:
+        linear-gradient(120deg, rgba(0,229,255,0.07), rgba(168,85,247,0.08));
+      border: 1px solid rgba(0,229,255,0.18);
+    }
+
+    .mission h2 {
+      color: #00e5ff;
+      margin-bottom: 12px;
+    }
+
+    .mission p {
+      max-width: 780px;
+      margin: auto;
+      color: #a9bdd0;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 18px;
+      border-left: 3px solid #00e5ff;
+      background: rgba(0, 229, 255, 0.045);
+      color: #a9bdd0;
+      font-size: 0.88rem;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 35px 0;
+      border-top: 1px solid rgba(0, 229, 255, 0.12);
+      text-align: center;
+      color: #71889c;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: #00e5ff;
+    }
+
+    @media (max-width: 850px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .path {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 65px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .path {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="container">
-<div class="logo">TRACEGUIDE <span>AI</span></div>
-</div>
+  <div class="container nav">
+
+    <a href="index.html" class="brand">
+      <div class="shield">T</div>
+      <div>TRACE<span>GUIDE</span> AI</div>
+    </a>
+
+    <nav>
+      <a href="get-help.html">Get Help</a>
+      <a href="document.html">Document</a>
+      <a href="secure.html">Secure</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+    </nav>
+
+  </div>
 </header>
 
 <main>
 
-<section class="hero">
-<div class="container">
-<div class="badge">DIGITAL SAFETY • ORGANIZED EVIDENCE • HUMAN SUPPORT</div>
+  <section class="hero">
+    <div class="container">
 
-<h1>Something Feels Wrong Online?<br><span>Start Here.</span></h1>
+      <div class="hero-badge">Digital Safety • Evidence • Human Support</div>
 
-<p>
-You don't have to understand technology to ask for help.
-TRACEGUIDE AI helps people document concerning online experiences,
-strengthen digital safety, organize information, and find appropriate human support.
-</p>
+      <h1>
+        Something Feels Wrong Online?
+        <span class="glow">Start Here.</span>
+      </h1>
 
-<div class="buttons">
-<a class="btn primary" href="get-help.html">🆘 I NEED HELP NOW</a>
-<a class="btn secondary" href="#how">LEARN HOW IT WORKS</a>
-</div>
-</div>
-</section>
+      <p>
+        You don't have to understand technology to ask for help.
+        TraceGuide AI helps people organize concerning digital experiences,
+        strengthen their digital safety, preserve information, and find
+        appropriate human support.
+      </p>
 
-<section class="section" id="how">
-<div class="container">
-<h2>Start Where You Need Help</h2>
-<p class="section-intro">
-Choose a path. You don't need to have everything figured out before you begin.
-</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="get-help.html">
+          🆘 I NEED HELP NOW
+        </a>
 
-<div class="cards">
+        <a class="btn btn-secondary" href="about.html">
+          Learn How It Works
+        </a>
+      </div>
 
-<div class="card">
-<div class="icon">📋</div>
-<h3>Document What’s Happening</h3>
-<p>Organize dates, messages, screenshots, usernames and other information into a clear timeline.</p>
-<a href="document.html">Start documenting →</a>
-</div>
+    </div>
+  </section>
 
-<div class="card">
-<div class="icon">🔐</div>
-<h3>Secure My Digital Life</h3>
-<p>Work through practical steps to strengthen your accounts, devices and personal information.</p>
-<a href="secure.html">Improve security →</a>
-</div>
+  <section class="section">
+    <div class="container">
 
-<div class="card">
-<div class="icon">🤝</div>
-<h3>Find Human Support</h3>
-<p>Learn how to connect with appropriate advocates, cybersecurity professionals and other support.</p>
-<a href="support.html">Find support →</a>
-</div>
+      <div class="section-title">
+        <h2>Your Next Step</h2>
+        <p>Choose the path that best matches what you need right now.</p>
+      </div>
 
-<div class="card">
-<div class="icon">📚</div>
-<h3>Learn & Stay Informed</h3>
-<p>Understand technology-facilitated abuse and learn safer ways to respond and preserve information.</p>
-<a href="about.html">Learn more →</a>
-</div>
+      <div class="cards">
 
-</div>
-</div>
-</section>
+        <a class="card" href="document.html">
+          <div class="icon">📋</div>
+          <h3>Document Your Experience</h3>
+          <p>
+            Organize dates, events, sources and notes into a simple timeline.
+          </p>
+        </a>
 
-<section class="section">
-<div class="container">
-<h2>Our Approach</h2>
-<p class="section-intro">A simple path from confusion toward organized information and appropriate support.</p>
+        <a class="card" href="secure.html">
+          <div class="icon">🔐</div>
+          <h3>Secure My Digital Life</h3>
+          <p>
+            Work through practical steps to strengthen your accounts and privacy.
+          </p>
+        </a>
 
-<div class="steps">
-<div class="step"><div class="number">01</div><h3>LISTEN</h3></div>
-<div class="step"><div class="number">02</div><h3>DOCUMENT</h3></div>
-<div class="step"><div class="number">03</div><h3>PROTECT</h3></div>
-<div class="step"><div class="number">04</div><h3>CONNECT</h3></div>
-<div class="step"><div class="number">05</div><h3>RECOVER</h3></div>
-</div>
-</div>
-</section>
+        <a class="card" href="support.html">
+          <div class="icon">🤝</div>
+          <h3>Find Human Support</h3>
+          <p>
+            Learn what kinds of trusted professionals and support services may help.
+          </p>
+        </a>
 
-<section class="section promise">
-<div class="container">
-<h2>AI Should Assist — Not Accuse.</h2>
-<p class="section-intro">
-TRACEGUIDE AI can help identify observable patterns in information you provide.
-It does not independently establish someone's identity, intent, guilt or responsibility.
-</p>
+        <a class="card" href="about.html">
+          <div class="icon">🧭</div>
+          <h3>Learn & Stay Informed</h3>
+          <p>
+            Understand TraceGuide AI's approach to digital safety and responsible AI.
+          </p>
+        </a>
 
-<div class="promise-grid">
-<div class="promise-item"><strong>Privacy Focused</strong>We prioritize responsible handling of sensitive information.</div>
-<div class="promise-item"><strong>No Secret Monitoring</strong>We don't secretly monitor people or devices.</div>
-<div class="promise-item"><strong>No Hacking</strong>We don't break into accounts or systems.</div>
-<div class="promise-item"><strong>Human Support</strong>Serious situations may require qualified human professionals.</div>
-</div>
-</div>
-</section>
+      </div>
 
-<section class="section">
-<div class="container" style="text-align:center">
-<h2>Knowledge. Guidance. Support. Freedom.</h2>
-<p class="section-intro">
-Our goal is simple: help people move from confusion to clarity,
-from scattered information to organized evidence, and from isolation toward appropriate support.
-</p>
-<a class="btn primary" href="get-help.html">GET STARTED</a>
-</div>
-</section>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Approach</h2>
+        <p>Technology should guide people toward safety—not create more fear.</p>
+      </div>
+
+      <div class="path">
+        <div>LISTEN</div>
+        <div>DOCUMENT</div>
+        <div>PROTECT</div>
+        <div>CONNECT</div>
+        <div>RECOVER</div>
+      </div>
+
+      <div class="mission">
+        <h2>Knowledge. Guidance. Support. Freedom.</h2>
+        <p>
+          TraceGuide AI is being built to help people make sense of difficult
+          digital experiences while keeping human judgment, safety and dignity
+          at the center.
+        </p>
+      </div>
+
+      <div class="notice">
+        <strong>AI should assist — not accuse.</strong><br>
+        TraceGuide AI may help identify observable patterns in information
+        provided by a user. It does not independently establish identity,
+        intent, guilt or responsibility.
+      </div>
+
+    </div>
+  </section>
 
 </main>
 
 <footer>
-<div class="container">
-<strong>TRACEGUIDE AI</strong><br>
-Listen. Document. Protect. Connect. Recover.<br><br>
-If you are facing an immediate threat to your physical safety, contact local emergency services first.
-</div>
+  <div class="container">
+    <strong>TRACEGUIDE AI</strong><br>
+    Listen. Document. Protect. Connect. Recover.<br><br>
+    If you are in immediate danger, contact local emergency services or a
+    trusted person first.
+  </div>
 </footer>
 
 </body>
