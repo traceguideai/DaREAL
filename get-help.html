@@ -1,141 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Need Help Now | TRACEGUIDE AI</title>
-<meta name="description" content="A safety-first starting point for people experiencing concerning online activity or technology-facilitated abuse.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Help | TraceGuide AI</title>
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#07111f;color:#eef7ff;line-height:1.6}
-.container{width:92%;max-width:850px;margin:auto}
-header{padding:22px 0;border-bottom:1px solid #18314d}
-.logo{font-size:24px;font-weight:800;color:#38d9ff}
-.logo span{color:#b77cff}
-main{padding:55px 0}
-.back{color:#48dcff;text-decoration:none;font-weight:bold}
-h1{font-size:clamp(36px,8vw,58px);line-height:1.1;margin:25px 0 15px}
-.intro{font-size:18px;color:#b9c9d8;margin-bottom:30px}
-.box{background:#0c1b2c;border:1px solid #193650;border-radius:16px;padding:25px;margin:20px 0}
-.box h2{margin-bottom:10px}
-label{display:block;margin:18px 0 8px;font-weight:bold}
-select,textarea{width:100%;padding:14px;border-radius:9px;border:1px solid #31516d;background:#081522;color:white;font-size:16px}
-textarea{min-height:130px;resize:vertical}
-button{margin-top:22px;padding:14px 22px;border:0;border-radius:9px;background:#20cfff;color:#03101a;font-weight:bold;font-size:16px}
-.notice{border-left:4px solid #b77cff;padding:15px;background:#101e30;color:#c8d5e0;margin:20px 0}
-footer{text-align:center;color:#879aaa;padding:35px 0;font-size:14px}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(0,229,255,.12), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(168,85,247,.12), transparent 32%),
+        #050914;
+      color: #eef7ff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(0,229,255,.14);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #00e5ff;
+      text-shadow: 0 0 12px rgba(0,229,255,.6);
+    }
+
+    .back {
+      color: #91a8bb;
+      font-size: .9rem;
+    }
+
+    .back:hover {
+      color: #00e5ff;
+    }
+
+    main {
+      padding: 70px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1px solid rgba(0,229,255,.4);
+      border-radius: 999px;
+      color: #7eefff;
+      font-size: .78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 7vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #00e5ff;
+      text-shadow: 0 0 18px rgba(0,229,255,.5);
+    }
+
+    .intro {
+      color: #9bb0c2;
+      max-width: 700px;
+      font-size: 1.05rem;
+      margin-bottom: 35px;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,229,255,.2);
+      background: rgba(255,255,255,.025);
+      box-shadow: 0 0 30px rgba(0,229,255,.05);
+      margin-bottom: 22px;
+    }
+
+    .panel h2 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .panel p {
+      color: #91a8bb;
+      margin-bottom: 20px;
+    }
+
+    .choices {
+      display: grid;
+      gap: 12px;
+    }
+
+    button,
+    .option {
+      width: 100%;
+      padding: 15px 17px;
+      border-radius: 11px;
+      border: 1px solid rgba(0,229,255,.2);
+      background: rgba(0,229,255,.045);
+      color: #eef7ff;
+      text-align: left;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover,
+    .option:hover {
+      border-color: #00e5ff;
+      box-shadow: 0 0 18px rgba(0,229,255,.12);
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 3px solid #00e5ff;
+      background: rgba(0,229,255,.05);
+      color: #b8cad8;
+    }
+
+    .warning {
+      border-color: rgba(255,120,160,.25);
+    }
+
+    .warning strong {
+      color: #ff9fba;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #71889c;
+      font-size: .82rem;
+      border-top: 1px solid rgba(0,229,255,.1);
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<div class="container">
-<div class="logo">TRACEGUIDE <span>AI</span></div>
-</div>
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      TRACE<span>GUIDE AI</span>
+    </a>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
 </header>
 
 <main>
-<div class="container">
+  <div class="container">
 
-<a class="back" href="index.html">← Back to TRACEGUIDE AI</a>
+    <div class="badge">Safety First</div>
 
-<h1>I Need Help Now</h1>
+    <h1>Let's find your <span>next step.</span></h1>
 
-<p class="intro">
-You don't have to understand everything that is happening before asking for help.
-Start with what you know, focus on your safety, and take one step at a time.
-</p>
+    <p class="intro">
+      You don't need to understand technology or have everything figured out.
+      Start with what you know, and take one step at a time.
+    </p>
 
-<div class="notice">
-<strong>Safety first:</strong> If you believe you are in immediate physical danger,
-contact your local emergency services or a trusted person who can help you now.
-</div>
+    <section class="panel">
+      <h2>Is the device you're using safe for you?</h2>
+      <p>
+        If you're unsure, don't enter sensitive information or upload evidence yet.
+      </p>
 
-<div class="box">
-<h2>First: Is the device you're using safe for you?</h2>
+      <div class="choices">
+        <button onclick="showResult('safe')">
+          ✓ Yes, I believe it is safe
+        </button>
 
-<p>
-If you are unsure whether someone else can access your phone, computer,
-accounts or communications, avoid entering highly sensitive information here.
-Consider using a device or communication method you believe is safer.
-</p>
+        <button onclick="showResult('unsure')">
+          ? I'm not sure
+        </button>
 
-<label for="device">Choose one:</label>
+        <button onclick="showResult('unsafe')">
+          ! No, I don't think it is safe
+        </button>
+      </div>
 
-<select id="device">
-<option>Yes — I believe this device is safe</option>
-<option>I'm not sure</option>
-<option>No — I don't believe this device is safe</option>
-</select>
-</div>
+      <div id="result" class="result"></div>
+    </section>
 
-<div class="box">
-<h2>What are you experiencing?</h2>
+    <section class="panel warning">
+      <h2>Immediate physical danger?</h2>
+      <p>
+        If you believe you or someone else is in immediate danger,
+        contact local emergency services or a trusted person first.
+      </p>
+    </section>
 
-<label for="experience">Choose the closest description:</label>
+    <section class="panel">
+      <h2>Ready for another step?</h2>
+      <div class="choices">
+        <a class="option" href="document.html">
+          📋 Document what is happening
+        </a>
 
-<select id="experience">
-<option>Repeated unwanted messages or contact</option>
-<option>Online harassment</option>
-<option>Concerns about cyberstalking</option>
-<option>Impersonation or fake accounts</option>
-<option>Account compromise or suspicious login activity</option>
-<option>Personal information exposed online</option>
-<option>Threats or intimidation</option>
-<option>Image-based abuse or sextortion</option>
-<option>Suspicious activity involving a device or account</option>
-<option>Something else</option>
-</select>
+        <a class="option" href="secure.html">
+          🔐 Strengthen my digital security
+        </a>
 
-<label for="details">Briefly describe what you have observed:</label>
+        <a class="option" href="support.html">
+          🤝 Find human support
+        </a>
+      </div>
+    </section>
 
-<textarea id="details" placeholder="Describe observable events, messages, account activity, dates, or other information you can verify. Avoid including passwords or financial account information."></textarea>
-
-<button onclick="showNext()">Continue</button>
-</div>
-
-<div id="next" class="box" style="display:none">
-<h2>Your next step</h2>
-
-<p>
-Thank you for organizing what you know. The safest next step depends on
-your circumstances.
-</p>
-
-<ul style="margin:15px 0 0 20px">
-<li>Preserve important messages, screenshots and dates when it is safe to do so.</li>
-<li>Consider strengthening account security and enabling multi-factor authentication.</li>
-<li>Tell someone you trust what is happening.</li>
-<li>For serious threats, consider contacting an appropriate professional or local support organization.</li>
-</ul>
-
-<p style="margin-top:18px">
-TRACEGUIDE AI does not independently determine who is responsible for an event.
-Our goal is to help organize observable information and connect people with appropriate support.
-</p>
-
-<a href="document.html" style="display:inline-block;margin-top:20px;color:#48dcff;font-weight:bold">
-→ Organize my information
-</a>
-</div>
-
-</div>
+  </div>
 </main>
 
 <footer>
-<div class="container">
-<strong>TRACEGUIDE AI</strong><br>
-Listen. Document. Protect. Connect. Recover.
-</div>
+  TRACEGUIDE AI — Listen. Document. Protect. Connect. Recover.
 </footer>
 
 <script>
-function showNext(){
-document.getElementById("next").style.display="block";
-document.getElementById("next").scrollIntoView({behavior:"smooth"});
-}
+  function showResult(choice) {
+    const result = document.getElementById("result");
+
+    if (choice === "safe") {
+      result.innerHTML =
+        "<strong>Good.</strong><br>You can continue to the next step when you're ready.";
+    }
+
+    if (choice === "unsure") {
+      result.innerHTML =
+        "<strong>That's okay.</strong><br>Consider using a device you trust or speaking with a trusted person before entering sensitive information.";
+    }
+
+    if (choice === "unsafe") {
+      result.innerHTML =
+        "<strong>Pause here.</strong><br>If possible, use a safer device or speak with a trusted person or qualified professional before documenting sensitive information.";
+    }
+
+    result.style.display = "block";
+  }
 </script>
 
 </body>
