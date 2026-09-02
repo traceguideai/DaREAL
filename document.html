@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document What’s Happening | TRACEGUIDE AI</title>
+<meta name="description" content="Organize dates, events, sources and notes into a clear personal timeline.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#07111f;color:#eef7ff;line-height:1.6}
+.container{width:92%;max-width:900px;margin:auto}
+header{padding:22px 0;border-bottom:1px solid #18314d}
+.logo{font-size:24px;font-weight:800;color:#38d9ff}
+.logo span{color:#b77cff}
+main{padding:50px 0}
+.back{color:#48dcff;text-decoration:none;font-weight:bold}
+h1{font-size:clamp(36px,8vw,58px);line-height:1.1;margin:25px 0 15px}
+.intro{font-size:18px;color:#b9c9d8;margin-bottom:25px}
+.notice{background:#101e30;border-left:4px solid #b77cff;padding:16px;margin:20px 0}
+.box{background:#0c1b2c;border:1px solid #193650;border-radius:16px;padding:25px;margin:20px 0}
+.box h2{margin-bottom:12px}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,textarea,select{
+width:100%;padding:13px;border-radius:8px;
+border:1px solid #31516d;background:#081522;color:#fff;
+font-size:16px
+}
+textarea{min-height:100px;resize:vertical}
+button{
+margin-top:18px;padding:13px 20px;border:0;border-radius:8px;
+background:#20cfff;color:#03101a;font-weight:bold;font-size:16px
+}
+.secondary{background:#26384b;color:#fff;margin-left:8px}
+.entry{
+background:#091827;border:1px solid #24435d;border-radius:10px;
+padding:18px;margin-top:15px
+}
+.entry strong{color:#48dcff}
+.empty{color:#8fa3b5;margin-top:12px}
+footer{text-align:center;color:#879aaa;padding:35px 0;font-size:14px}
+ul{margin:12px 0 0 20px}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">TRACEGUIDE <span>AI</span></div>
+</div>
+</header>
+
+<main>
+<div class="container">
+
+<a class="back" href="index.html">← Back to TRACEGUIDE AI</a>
+
+<h1>Document What’s Happening</h1>
+
+<p class="intro">
+When something feels confusing, writing down the observable events can help
+turn scattered information into a clearer picture.
+</p>
+
+<div class="notice">
+<strong>Privacy reminder:</strong>
+This prototype stores your entries only in this browser session.
+Do not enter passwords, financial information, private medical information,
+or other highly sensitive information.
+</div>
+
+<div class="box">
+<h2>Add a timeline entry</h2>
+
+<label for="date">Date</label>
+<input type="date" id="date">
+
+<label for="time">Time</label>
+<input type="time" id="time">
+
+<label for="event">What happened?</label>
+<textarea id="event"
+placeholder="Describe what you directly observed. Example: Received a message from an unfamiliar account."></textarea>
+
+<label for="source">Source</label>
+<select id="source">
+<option>Message</option>
+<option>Email</option>
+<option>Social media</option>
+<option>Phone/device</option>
+<option>Website</option>
+<option>Account notification</option>
+<option>Other</option>
+</select>
+
+<label for="evidence">Evidence available</label>
+<input type="text" id="evidence"
+placeholder="Example: Screenshot, email, notification, URL">
+
+<label for="notes">Additional notes</label>
+<textarea id="notes"
+placeholder="Anything else you want to remember about this event."></textarea>
+
+<button onclick="addEntry()">Add to timeline</button>
+<button class="secondary" onclick="clearTimeline()">Clear timeline</button>
+</div>
+
+<div class="box">
+<h2>Your timeline</h2>
+
+<div id="timeline" class="empty">
+No entries yet. Add your first event above.
+</div>
+</div>
+
+<div class="box">
+<h2>Good documentation habits</h2>
+
+<ul>
+<li>Record what you directly observed rather than assumptions about who caused it.</li>
+<li>Keep the original date and time whenever possible.</li>
+<li>Keep screenshots or original messages when it is safe to do so.</li>
+<li>Record the platform, account name, URL or other source when relevant.</li>
+<li>Never share passwords or authentication codes as evidence.</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>What comes next?</h2>
+
+<p>
+Once you have organized the information, you can review your digital-security
+steps or consider whether human support would be helpful.
+</p>
+
+<p style="margin-top:15px">
+<a href="secure.html" style="color:#48dcff;font-weight:bold">
+→ Secure my digital life
+</a>
+</p>
+
+<p style="margin-top:10px">
+<a href="support.html" style="color:#48dcff;font-weight:bold">
+→ Find human support
+</a>
+</p>
+</div>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+<strong>TRACEGUIDE AI</strong><br>
+Listen. Document. Protect. Connect. Recover.
+</div>
+</footer>
+
+<script>
+let timeline = [];
+
+function addEntry(){
+
+const date = document.getElementById("date").value;
+const time = document.getElementById("time").value;
+const eventText = document.getElementById("event").value.trim();
+const source = document.getElementById("source").value;
+const evidence = document.getElementById("evidence").value.trim();
+const notes = document.getElementById("notes").value.trim();
+
+if(!date || !eventText){
+alert("Please enter at least a date and describe what happened.");
+return;
+}
+
+timeline.push({
+date:date,
+time:time,
+event:eventText,
+source:source,
+evidence:evidence,
+notes:notes
+});
+
+timeline.sort((a,b)=>{
+return (a.date+" "+a.time).localeCompare(b.date+" "+b.time);
+});
+
+renderTimeline();
+
+document.getElementById("date").value="";
+document.getElementById("time").value="";
+document.getElementById("event").value="";
+document.getElementById("evidence").value="";
+document.getElementById("notes").value="";
+}
+
+function renderTimeline(){
+
+const box = document.getElementById("timeline");
+
+if(timeline.length === 0){
+box.innerHTML = "No entries yet. Add your first event above.";
+box.className = "empty";
+return;
+}
+
+box.className = "";
+
+box.innerHTML = timeline.map((item,index)=>{
+
+return `
+<div class="entry">
+<strong>${escapeHTML(item.date)} ${escapeHTML(item.time)}</strong>
+<p><b>Event:</b> ${escapeHTML(item.event)}</p>
+<p><b>Source:</b> ${escapeHTML(item.source)}</p>
+<p><b>Evidence:</b> ${escapeHTML(item.evidence || "Not specified")}</p>
+<p><b>Notes:</b> ${escapeHTML(item.notes || "None")}</p>
+<button onclick="removeEntry(${index})">Remove</button>
+</div>
+`;
+
+}).join("");
+}
+
+function removeEntry(index){
+timeline.splice(index,1);
+renderTimeline();
+}
+
+function clearTimeline(){
+
+if(confirm("Clear all timeline entries from this session?")){
+timeline=[];
+renderTimeline();
+}
+}
+
+function escapeHTML(value){
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+}
+</script>
+
+</body>
+</html>
