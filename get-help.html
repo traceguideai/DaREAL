@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Need Help Now | TRACEGUIDE AI</title>
+<meta name="description" content="A safety-first starting point for people experiencing concerning online activity or technology-facilitated abuse.">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#07111f;color:#eef7ff;line-height:1.6}
+.container{width:92%;max-width:850px;margin:auto}
+header{padding:22px 0;border-bottom:1px solid #18314d}
+.logo{font-size:24px;font-weight:800;color:#38d9ff}
+.logo span{color:#b77cff}
+main{padding:55px 0}
+.back{color:#48dcff;text-decoration:none;font-weight:bold}
+h1{font-size:clamp(36px,8vw,58px);line-height:1.1;margin:25px 0 15px}
+.intro{font-size:18px;color:#b9c9d8;margin-bottom:30px}
+.box{background:#0c1b2c;border:1px solid #193650;border-radius:16px;padding:25px;margin:20px 0}
+.box h2{margin-bottom:10px}
+label{display:block;margin:18px 0 8px;font-weight:bold}
+select,textarea{width:100%;padding:14px;border-radius:9px;border:1px solid #31516d;background:#081522;color:white;font-size:16px}
+textarea{min-height:130px;resize:vertical}
+button{margin-top:22px;padding:14px 22px;border:0;border-radius:9px;background:#20cfff;color:#03101a;font-weight:bold;font-size:16px}
+.notice{border-left:4px solid #b77cff;padding:15px;background:#101e30;color:#c8d5e0;margin:20px 0}
+footer{text-align:center;color:#879aaa;padding:35px 0;font-size:14px}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">TRACEGUIDE <span>AI</span></div>
+</div>
+</header>
+
+<main>
+<div class="container">
+
+<a class="back" href="index.html">← Back to TRACEGUIDE AI</a>
+
+<h1>I Need Help Now</h1>
+
+<p class="intro">
+You don't have to understand everything that is happening before asking for help.
+Start with what you know, focus on your safety, and take one step at a time.
+</p>
+
+<div class="notice">
+<strong>Safety first:</strong> If you believe you are in immediate physical danger,
+contact your local emergency services or a trusted person who can help you now.
+</div>
+
+<div class="box">
+<h2>First: Is the device you're using safe for you?</h2>
+
+<p>
+If you are unsure whether someone else can access your phone, computer,
+accounts or communications, avoid entering highly sensitive information here.
+Consider using a device or communication method you believe is safer.
+</p>
+
+<label for="device">Choose one:</label>
+
+<select id="device">
+<option>Yes — I believe this device is safe</option>
+<option>I'm not sure</option>
+<option>No — I don't believe this device is safe</option>
+</select>
+</div>
+
+<div class="box">
+<h2>What are you experiencing?</h2>
+
+<label for="experience">Choose the closest description:</label>
+
+<select id="experience">
+<option>Repeated unwanted messages or contact</option>
+<option>Online harassment</option>
+<option>Concerns about cyberstalking</option>
+<option>Impersonation or fake accounts</option>
+<option>Account compromise or suspicious login activity</option>
+<option>Personal information exposed online</option>
+<option>Threats or intimidation</option>
+<option>Image-based abuse or sextortion</option>
+<option>Suspicious activity involving a device or account</option>
+<option>Something else</option>
+</select>
+
+<label for="details">Briefly describe what you have observed:</label>
+
+<textarea id="details" placeholder="Describe observable events, messages, account activity, dates, or other information you can verify. Avoid including passwords or financial account information."></textarea>
+
+<button onclick="showNext()">Continue</button>
+</div>
+
+<div id="next" class="box" style="display:none">
+<h2>Your next step</h2>
+
+<p>
+Thank you for organizing what you know. The safest next step depends on
+your circumstances.
+</p>
+
+<ul style="margin:15px 0 0 20px">
+<li>Preserve important messages, screenshots and dates when it is safe to do so.</li>
+<li>Consider strengthening account security and enabling multi-factor authentication.</li>
+<li>Tell someone you trust what is happening.</li>
+<li>For serious threats, consider contacting an appropriate professional or local support organization.</li>
+</ul>
+
+<p style="margin-top:18px">
+TRACEGUIDE AI does not independently determine who is responsible for an event.
+Our goal is to help organize observable information and connect people with appropriate support.
+</p>
+
+<a href="document.html" style="display:inline-block;margin-top:20px;color:#48dcff;font-weight:bold">
+→ Organize my information
+</a>
+</div>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+<strong>TRACEGUIDE AI</strong><br>
+Listen. Document. Protect. Connect. Recover.
+</div>
+</footer>
+
+<script>
+function showNext(){
+document.getElementById("next").style.display="block";
+document.getElementById("next").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
