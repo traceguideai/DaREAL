@@ -1,4 +1,4 @@
-name: Deploy TraceGuide AI
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -26,12 +26,11 @@ jobs:
         run: |
           mkdir -p _site
           unzip -q DaREAL-main.zip -d extracted
-          INDEX=$(find extracted -name index.html -type f | head -n 1)
-          if [ -z "$INDEX" ]; then
+          SITE_DIR=$(find extracted -type f -name "index.html" -print -quit | xargs dirname)
+          if [ -z "$SITE_DIR" ] || [ "$SITE_DIR" = "." ]; then
             echo "index.html not found"
             exit 1
           fi
-          SITE_DIR=$(dirname "$INDEX")
           cp -R "$SITE_DIR"/. _site/
 
       - name: Setup Pages
@@ -40,7 +39,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: _site
+          path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment
