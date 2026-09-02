@@ -1,0 +1,47 @@
+name: Deploy TraceGuide AI
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Prepare website
+        run: |
+          mkdir -p _site
+          unzip -q traceguide-ai-github-ready.zip -d extracted
+          INDEX=$(find extracted -name index.html -type f | head -n 1)
+          if [ -z "$INDEX" ]; then
+            echo "index.html not found"
+            exit 1
+          fi
+          SITE_DIR=$(dirname "$INDEX")
+          cp -R "$SITE_DIR"/. _site/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
