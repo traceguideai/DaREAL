@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure My Digital Life | TRACEGUIDE AI</title>
+<meta name="description" content="A practical digital security checklist for strengthening accounts, devices and personal information.">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#07111f;color:#eef7ff;line-height:1.6}
+.container{width:92%;max-width:900px;margin:auto}
+header{padding:22px 0;border-bottom:1px solid #18314d}
+.logo{font-size:24px;font-weight:800;color:#38d9ff}
+.logo span{color:#b77cff}
+main{padding:50px 0}
+.back{color:#48dcff;text-decoration:none;font-weight:bold}
+h1{font-size:clamp(36px,8vw,58px);line-height:1.1;margin:25px 0 15px}
+.intro{font-size:18px;color:#b9c9d8;margin-bottom:25px}
+.notice{background:#101e30;border-left:4px solid #b77cff;padding:16px;margin:20px 0}
+.box{background:#0c1b2c;border:1px solid #193650;border-radius:16px;padding:25px;margin:20px 0}
+.box h2{margin-bottom:10px}
+.check{
+display:flex;gap:13px;align-items:flex-start;
+padding:15px 0;border-bottom:1px solid #1b344b
+}
+.check:last-child{border-bottom:0}
+.check input{width:20px;height:20px;margin-top:4px;accent-color:#20cfff}
+.check strong{display:block}
+.check span{color:#aebdcb;font-size:14px}
+.progress{
+height:10px;background:#14283b;border-radius:10px;
+overflow:hidden;margin:15px 0
+}
+.progress-bar{height:100%;width:0;background:#20cfff;transition:.3s}
+button{
+margin-top:20px;padding:13px 20px;border:0;border-radius:8px;
+background:#20cfff;color:#03101a;font-weight:bold;font-size:16px
+}
+footer{text-align:center;color:#879aaa;padding:35px 0;font-size:14px}
+ul{margin:12px 0 0 20px}
+a{color:#48dcff}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">TRACEGUIDE <span>AI</span></div>
+</div>
+</header>
+
+<main>
+<div class="container">
+
+<a class="back" href="index.html">← Back to TRACEGUIDE AI</a>
+
+<h1>Secure My Digital Life</h1>
+
+<p class="intro">
+Small security improvements can make a meaningful difference.
+Work through the checklist at your own pace.
+</p>
+
+<div class="notice">
+<strong>Safety first:</strong>
+If you believe another person may have access to your device or accounts,
+consider using a safer device before making sensitive changes.
+If changing a password could alert someone who has access to an account,
+consider getting professional safety advice first.
+</div>
+
+<div class="box">
+<h2>Your security progress</h2>
+<p id="progressText">0 of 10 completed</p>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+</div>
+
+<div class="box">
+
+<h2>Account Security</h2>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Use unique passwords</strong>
+<span>Avoid reusing the same password across important accounts.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Enable multi-factor authentication</strong>
+<span>Use MFA on email, banking, social media and other important accounts whenever available.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Review account recovery options</strong>
+<span>Check recovery email addresses and phone numbers and remove ones you no longer control.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Review active sessions</strong>
+<span>Look for unfamiliar devices or sessions in your account security settings.</span>
+</div>
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Device Security</h2>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Keep your device updated</strong>
+<span>Install operating-system and security updates from trusted sources.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Use a device passcode</strong>
+<span>Protect your phone or computer with a strong passcode or password.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Review installed applications</strong>
+<span>Remove applications you do not recognize or no longer need, when safe to do so.</span>
+</div>
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Privacy & Information</h2>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Review privacy settings</strong>
+<span>Check who can see your posts, profile information, location and contact details.</span>
+</div>
+</div>
+
+<div class="check">
+<input type="checkbox" onchange="updateProgress()">
+<div>
+<strong>Protect sensitive information</strong>
+<span>Never share passwords, authentication codes, private keys or full financial information with someone asking for them online.</span>
+</div>
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Remember</h2>
+
+<ul>
+<li>Do not use the same password everywhere.</li>
+<li>Never give anyone an authentication code sent to your phone or email.</li>
+<li>Be cautious with unexpected links and attachments.</li>
+<li>Use official websites or applications when changing security settings.</li>
+<li>If something feels unsafe, pause and seek trusted human assistance.</li>
+</ul>
+
+<button onclick="resetChecklist()">Reset checklist</button>
+
+</div>
+
+<div class="box">
+
+<h2>Need another step?</h2>
+
+<p>
+You can organize what you've observed or explore human support options.
+</p>
+
+<p style="margin-top:15px">
+<a href="document.html">→ Document my experience</a>
+</p>
+
+<p style="margin-top:10px">
+<a href="support.html">→ Find human support</a>
+</p>
+
+</div>
+
+</div>
+</main>
+
+<footer>
+<div class="container">
+<strong>TRACEGUIDE AI</strong><br>
+Listen. Document. Protect. Connect. Recover.
+</div>
+</footer>
+
+<script>
+function updateProgress(){
+
+const checks=document.querySelectorAll(".check input");
+let completed=0;
+
+checks.forEach(check=>{
+if(check.checked) completed++;
+});
+
+const total=checks.length;
+const percentage=(completed/total)*100;
+
+document.getElementById("progressText").textContent=
+completed+" of "+total+" completed";
+
+document.getElementById("progressBar").style.width=
+percentage+"%";
+}
+
+function resetChecklist(){
+
+document.querySelectorAll(".check input").forEach(check=>{
+check.checked=false;
+});
+
+updateProgress();
+}
+</script>
+
+</body>
+</html>
