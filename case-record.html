@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Record Framework | TraceGuide AI</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #eaf6ff;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 20px;
+      background: linear-gradient(135deg, #07111f, #111d38);
+      border-bottom: 1px solid #245477;
+    }
+
+    h1 {
+      color: #61e7ff;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: #a18cff;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #61e7ff;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 15px auto 0;
+      color: #c9d9e8;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .warning {
+      background: #21182c;
+      border: 1px solid #8f7cff;
+      padding: 20px;
+      border-radius: 14px;
+      margin-bottom: 30px;
+    }
+
+    .record {
+      background: #0d1b2d;
+      border: 1px solid #1b4562;
+      border-radius: 15px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .number {
+      color: #ff72d2;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .field {
+      background: #091625;
+      border: 1px solid #24465e;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .label {
+      color: #61e7ff;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .placeholder {
+      color: #91a9bb;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .principle {
+      border-left: 4px solid #61e7ff;
+      background: #0a1625;
+      padding: 18px;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #132c3e;
+      color: #61e7ff;
+      margin: 5px 5px 5px 0;
+      border: 1px solid #245477;
+    }
+
+    .flow {
+      text-align: center;
+      background: #091625;
+      border: 1px solid #285271;
+      padding: 24px;
+      border-radius: 14px;
+      margin: 30px 0;
+    }
+
+    .flow strong {
+      color: #ff72d2;
+    }
+
+    .button-area {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #176b91, #6047a8);
+      padding: 12px 18px;
+      border-radius: 10px;
+      margin: 6px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #8fa8bb;
+      border-top: 1px solid #183b57;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>TraceGuide AI</h1>
+  <h2>Case Record Framework</h2>
+
+  <p class="intro">
+    Internal template for organizing a support request consistently,
+    safely, and without turning the current public prototype into a
+    sensitive case database.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="warning">
+
+    <strong>IMPORTANT — TEMPLATE ONLY</strong>
+
+    <br><br>
+
+    This page is a framework for designing TraceGuide's future case-management
+    process. Do not enter real names, private messages, passwords, financial
+    information, authentication codes, private keys, medical information,
+    precise addresses, or highly sensitive evidence into this public GitHub
+    Pages prototype.
+
+    <br><br>
+
+    Real case records should eventually be handled through a properly secured
+    private system with appropriate access controls, encryption, retention
+    policies, audit procedures, and privacy protections.
+
+  </div>
+
+  <div class="principle">
+
+    <strong>Case Record Principle</strong>
+
+    <br><br>
+
+    Record what is necessary to understand the request and provide an
+    appropriate next step. Separate observable information from assumptions,
+    interpretations, and conclusions.
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">01 — CASE IDENTIFICATION</div>
+
+    <h3>Basic Case Reference</h3>
+
+    <div class="field">
+      <span class="label">Case ID</span>
+      <span class="placeholder">Example: TG-0001</span>
+    </div>
+
+    <div class="field">
+      <span class="label">Date Received</span>
+      <span class="placeholder">Record the date the request was received.</span>
+    </div>
+
+    <div class="field">
+      <span class="label">Current Status</span>
+
+      <div>
+        <span class="status">New</span>
+        <span class="status">Under Review</span>
+        <span class="status">Referral Needed</span>
+        <span class="status">Follow-Up</span>
+        <span class="status">Closed</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">02 — REQUEST SUMMARY</div>
+
+    <h3>What Is the Person Asking For?</h3>
+
+    <div class="field">
+      <span class="label">Primary Concern</span>
+      <span class="placeholder">
+        Briefly summarize the request using the person's own information.
+      </span>
+    </div>
+
+    <div class="field">
+      <span class="label">Requested Assistance</span>
+      <span class="placeholder">
+        Identify what the person wants help understanding or doing.
+      </span>
+    </div>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">03 — SAFETY REVIEW</div>
+
+    <h3>Immediate Safety</h3>
+
+    <ul>
+      <li>Physical-safety concern reported?</li>
+      <li>Device/account reported as unsafe?</li>
+      <li>Safer communication method needed?</li>
+      <li>Emergency or crisis resource potentially appropriate?</li>
+    </ul>
+
+    <div class="principle">
+      If there is an immediate threat to life or physical safety,
+      appropriate emergency or crisis resources should take priority.
+    </div>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">04 — SUPPORT CATEGORY</div>
+
+    <h3>Identify the Main Need</h3>
+
+    <ul>
+      <li>Digital or account security</li>
+      <li>Online harassment</li>
+      <li>Cyberstalking concern</li>
+      <li>Impersonation</li>
+      <li>Personal information exposure</li>
+      <li>Documentation assistance</li>
+      <li>Legal-resource information</li>
+      <li>Emotional or recovery support</li>
+      <li>Multiple support needs</li>
+    </ul>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">05 — OBSERVABLE INFORMATION</div>
+
+    <h3>What Can Actually Be Documented?</h3>
+
+    <div class="field">
+      <span class="label">Observed Events</span>
+      <span class="placeholder">
+        Record dates, times, messages, account activity, URLs, notifications,
+        or other information that was actually observed or submitted.
+      </span>
+    </div>
+
+    <div class="field">
+      <span class="label">Evidence Available</span>
+      <span class="placeholder">
+        Note the type of evidence without storing sensitive evidence here.
+      </span>
+    </div>
+
+    <div class="field">
+      <span class="label">Unverified Interpretation</span>
+      <span class="placeholder">
+        Clearly distinguish assumptions or explanations that have not been
+        independently established.
+      </span>
+    </div>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">06 — DIGITAL SAFETY</div>
+
+    <h3>Protection Considerations</h3>
+
+    <ul>
+      <li>Account-security guidance potentially needed</li>
+      <li>Multi-factor authentication guidance</li>
+      <li>Active-session review</li>
+      <li>Safer communication considerations</li>
+      <li>Documentation preservation when safe</li>
+      <li>Trusted-person involvement when appropriate</li>
+    </ul>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">07 — REFERRAL DECISION</div>
+
+    <h3>Choose the Appropriate Human Pathway</h3>
+
+    <div class="field">
+      <span class="label">Referral Type</span>
+
+      <ul>
+        <li>Emergency or crisis resource</li>
+        <li>Victim advocate</li>
+        <li>Cybersecurity professional</li>
+        <li>Legal resource</li>
+        <li>Specialized technology-abuse organization</li>
+        <li>Emotional/recovery support</li>
+        <li>Multiple referrals</li>
+      </ul>
+    </div>
+
+    <div class="field">
+      <span class="label">Reason for Referral</span>
+      <span class="placeholder">
+        Explain why this type of human support appears appropriate based
+        on the information available.
+      </span>
+    </div>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">08 — RESPONSE</div>
+
+    <h3>Prepare the Next-Step Response</h3>
+
+    <ul>
+      <li>Acknowledge the request.</li>
+      <li>Reflect the information actually provided.</li>
+      <li>Avoid unsupported accusations or conclusions.</li>
+      <li>Provide the appropriate next step.</li>
+      <li>Provide relevant referral information.</li>
+      <li>Respect the person's choices.</li>
+    </ul>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">09 — FOLLOW-UP</div>
+
+    <h3>Check the Outcome</h3>
+
+    <ul>
+      <li>Was the referral received?</li>
+      <li>Did the person's safety situation change?</li>
+      <li>Is additional support needed?</li>
+      <li>Is another referral appropriate?</li>
+      <li>Does the person want to continue?</li>
+    </ul>
+
+  </div>
+
+  <div class="record">
+
+    <div class="number">10 — CLOSURE & LEARNING</div>
+
+    <h3>Close Responsibly</h3>
+
+    <p>
+      When appropriate, document the final status of the request and identify
+      lessons that could improve TraceGuide's resources or referral process.
+    </p>
+
+    <p>
+      Personal stories or information should never be reused for public
+      education, research, or testimonials without appropriate consent and
+      privacy safeguards.
+    </p>
+
+  </div>
+
+  <div class="flow">
+
+    <strong>CASE RECORD FLOW</strong>
+
+    <br><br>
+
+    CASE ID
+    →
+    REQUEST
+    →
+    SAFETY
+    →
+    CATEGORY
+    →
+    OBSERVABLE INFORMATION
+    →
+    PROTECT
+    →
+    REFERRAL
+    →
+    RESPONSE
+    →
+    FOLLOW-UP
+    →
+    CLOSURE
+
+  </div>
+
+  <div class="principle">
+
+    <strong>Final Case Question</strong>
+
+    <br><br>
+
+    “Based on the information we actually have, what is the safest and most
+    appropriate next step for this person?”
+
+  </div>
+
+  <div class="button-area">
+
+    <a class="button" href="operations.html">Operations Center</a>
+    <a class="button" href="case-routing.html">Case Routing</a>
+    <a class="button" href="case-review.html">Case Review</a>
+    <a class="button" href="case-checklist.html">Case Checklist</a>
+    <a class="button" href="response-guide.html">Response Guide</a>
+    <a class="button" href="follow-up.html">Follow-Up</a>
+    <a class="button" href="index.html">Home</a>
+
+  </div>
+
+</div>
+
+<footer>
+  TraceGuide AI — Listen. Document. Protect. Connect. Recover.
+  <br><br>
+  Internal Case Record Framework
+</footer>
+
+</body>
+</html>
