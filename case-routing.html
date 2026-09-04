@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Routing Framework | TraceGuide AI</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #eaf6ff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #07111f, #101d35);
+      border-bottom: 1px solid #1d4f73;
+    }
+
+    h1 {
+      color: #61e7ff;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #8f7cff;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #61e7ff;
+    }
+
+    .subtitle {
+      max-width: 750px;
+      margin: auto;
+      color: #c7d9e8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .warning {
+      background: #21182c;
+      border: 1px solid #8f7cff;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .step {
+      background: #0d1b2d;
+      border: 1px solid #183b57;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .number {
+      color: #ff72d2;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .principle {
+      border-left: 4px solid #61e7ff;
+      padding: 15px 18px;
+      background: #0a1625;
+      margin: 20px 0;
+    }
+
+    .flow {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #dcecff;
+      background: #091625;
+      border: 1px solid #264d6a;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 25px 0;
+    }
+
+    .button-area {
+      text-align: center;
+      margin: 35px 0;
+    }
+
+    a.button {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #176b91, #6047a8);
+      padding: 12px 18px;
+      border-radius: 10px;
+      margin: 6px;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #8fa8bb;
+      border-top: 1px solid #183b57;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>TraceGuide AI</h1>
+  <h2>Case Intake & Routing Framework</h2>
+
+  <p class="subtitle">
+    Internal framework for safely receiving, reviewing, routing, and following up
+    on technology-safety support requests.
+  </p>
+</header>
+
+<div class="container">
+
+  <div class="warning">
+    <strong>INTERNAL USE:</strong>
+    This framework is intended to support consistent, safe, privacy-conscious
+    handling of requests. It does not replace emergency services, qualified
+    legal professionals, cybersecurity professionals, victim advocates, or
+    other specialized human services.
+  </div>
+
+  <div class="principle">
+    <strong>Core Principle:</strong><br>
+    Take the person's experience seriously without automatically treating
+    every interpretation or explanation as an established fact.
+  </div>
+
+  <div class="step">
+    <div class="number">01 — REQUEST RECEIVED</div>
+    <h3>Begin With the Information Provided</h3>
+
+    <p>Review the submitted request and identify:</p>
+
+    <ul>
+      <li>Date the request was received</li>
+      <li>Contact information provided</li>
+      <li>Type of help requested</li>
+      <li>Description of the person's concern</li>
+      <li>Physical-safety response</li>
+      <li>Device/account-safety response</li>
+    </ul>
+
+    <p>
+      Do not request passwords, authentication codes, banking information,
+      private keys, or other unnecessary sensitive credentials.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">02 — SAFETY FIRST</div>
+    <h3>Check Immediate Risk</h3>
+
+    <p>Review the two initial safety questions:</p>
+
+    <ul>
+      <li>Is there an immediate concern about physical safety?</li>
+      <li>Is the device or account being used safe right now?</li>
+    </ul>
+
+    <p>
+      If immediate physical danger is reported, prioritize appropriate
+      emergency or crisis resources and qualified human support.
+    </p>
+
+    <p>
+      If the device or account may be monitored or compromised, avoid
+      requesting sensitive information through that potentially unsafe channel.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">03 — UNDERSTAND THE REQUEST</div>
+    <h3>Identify What the Person Needs</h3>
+
+    <p>Possible support categories include:</p>
+
+    <ul>
+      <li>Account or digital-security concerns</li>
+      <li>Online harassment</li>
+      <li>Cyberstalking concerns</li>
+      <li>Impersonation</li>
+      <li>Exposure of personal information</li>
+      <li>Documentation assistance</li>
+      <li>Legal-resource information</li>
+      <li>Emotional or recovery support</li>
+      <li>Multiple forms of support</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="number">04 — REVIEW OBSERVABLE INFORMATION</div>
+    <h3>Separate Observation From Interpretation</h3>
+
+    <p>
+      Review what can actually be documented from the information provided.
+    </p>
+
+    <p><strong>Examples of observable information:</strong></p>
+
+    <ul>
+      <li>A message was received from a particular account.</li>
+      <li>An account-login notification appeared.</li>
+      <li>A public post contained specific information.</li>
+      <li>Multiple unwanted contacts occurred at documented times.</li>
+      <li>A particular account or URL was involved.</li>
+    </ul>
+
+    <p>
+      Avoid presenting an assumed identity, motive, cause, or responsibility
+      as established simply because it appears in a person's interpretation.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">05 — PROTECT</div>
+    <h3>Consider Safe Digital-Safety Steps</h3>
+
+    <p>Depending on the situation, appropriate guidance may include:</p>
+
+    <ul>
+      <li>Reviewing account security</li>
+      <li>Using multi-factor authentication</li>
+      <li>Reviewing active account sessions</li>
+      <li>Preserving relevant documentation when safe</li>
+      <li>Using a safer device or communication method when appropriate</li>
+      <li>Speaking with a trusted person</li>
+      <li>Connecting with a qualified professional</li>
+    </ul>
+
+    <p>
+      Safety decisions should be individualized rather than treated as
+      one-size-fits-all instructions.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">06 — ROUTE</div>
+    <h3>Determine the Appropriate Human Support</h3>
+
+    <ul>
+      <li><strong>Immediate danger:</strong> emergency or crisis resources</li>
+      <li><strong>Technology abuse or stalking:</strong> appropriate victim advocate</li>
+      <li><strong>Account compromise:</strong> qualified cybersecurity professional</li>
+      <li><strong>Legal questions:</strong> qualified legal resource</li>
+      <li><strong>Image-based abuse:</strong> specialized support organization</li>
+      <li><strong>Emotional or recovery needs:</strong> appropriate support service</li>
+      <li><strong>Multiple needs:</strong> coordinated referrals</li>
+    </ul>
+
+    <p>
+      TraceGuide's role is to help people find the appropriate next step,
+      not to pretend to be every professional service.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">07 — RESPOND</div>
+    <h3>Provide a Safe and Clear Response</h3>
+
+    <p>A response should generally:</p>
+
+    <ul>
+      <li>Acknowledge the person's request</li>
+      <li>Reflect the information they actually provided</li>
+      <li>Avoid unsupported conclusions</li>
+      <li>Explain the appropriate next step</li>
+      <li>Provide relevant human resources or referrals</li>
+      <li>Respect the person's choices</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="number">08 — FOLLOW UP</div>
+    <h3>Close the Loop Safely</h3>
+
+    <p>When appropriate and safe, determine:</p>
+
+    <ul>
+      <li>Whether the person received the referral</li>
+      <li>Whether their safety situation changed</li>
+      <li>Whether additional support is needed</li>
+      <li>Whether another referral may be appropriate</li>
+    </ul>
+
+    <p>
+      The person remains in control of their own decisions.
+    </p>
+  </div>
+
+  <div class="step">
+    <div class="number">09 — LEARN</div>
+    <h3>Improve TraceGuide Responsibly</h3>
+
+    <p>
+      With appropriate consent and privacy protections, recurring patterns in
+      support requests can help TraceGuide improve educational resources,
+      referral pathways, safety guidance, and future system design.
+    </p>
+
+    <p>
+      Personal information should never be used for learning or public
+      storytelling without appropriate permission and safeguards.
+    </p>
+  </div>
+
+  <div class="flow">
+    <strong>TRACEGUIDE CASE FLOW</strong><br><br>
+
+    REQUEST<br>
+    ↓<br>
+    SAFETY<br>
+    ↓<br>
+    UNDERSTAND<br>
+    ↓<br>
+    OBSERVE<br>
+    ↓<br>
+    PROTECT<br>
+    ↓<br>
+    ROUTE<br>
+    ↓<br>
+    RESPOND<br>
+    ↓<br>
+    FOLLOW UP<br>
+    ↓<br>
+    RECOVER / LEARN
+  </div>
+
+  <div class="step">
+    <h3>AI Safety Rule</h3>
+
+    <p>
+      AI may assist with organizing information and identifying observable
+      patterns in submitted material.
+    </p>
+
+    <p>
+      AI must not independently establish someone's identity, intent, guilt,
+      responsibility, or the cause of an unexplained event.
+    </p>
+
+    <p>
+      Human judgment and appropriate professional support remain essential.
+    </p>
+  </div>
+
+  <div class="step">
+    <h3>Privacy Rules</h3>
+
+    <ul>
+      <li>Collect only information necessary for the support request.</li>
+      <li>Do not request passwords or authentication codes.</li>
+      <li>Do not expose private information publicly.</li>
+      <li>Use safer communication methods when needed.</li>
+      <li>Respect the person's consent and choices.</li>
+      <li>Do not share personal stories without appropriate permission.</li>
+      <li>Do not use the current prototype as a secure evidence vault.</li>
+    </ul>
+  </div>
+
+  <div class="principle">
+    <strong>Final Routing Question:</strong><br>
+    “What is the safest, most appropriate next step for this person based on
+    the information we actually have?”
+  </div>
+
+  <div class="button-area">
+    <a class="button" href="protocol.html">Internal Protocol</a>
+    <a class="button" href="case-review.html">Case Review</a>
+    <a class="button" href="case-checklist.html">Case Checklist</a>
+    <a class="button" href="response-guide.html">Response Guide</a>
+    <a class="button" href="follow-up.html">Follow-Up</a>
+    <a class="button" href="index.html">Home</a>
+  </div>
+
+</div>
+
+<footer>
+  TraceGuide AI — Listen. Document. Protect. Connect. Recover.
+  <br><br>
+  Internal Case Routing Framework
+</footer>
+
+</body>
+</html>
